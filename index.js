@@ -4,7 +4,7 @@ const menuList = [
     name: "Nasi Goreng",
     price: 10000,
     category: "menu nasi",
-    image: "assets/thumbnails/nasi-goreng.jpg"
+    image: "./assets/thumbnails/nasi-goreng.jpg"
   },
   {
     id: 2,
@@ -28,11 +28,20 @@ const menuList = [
 ];
 
 const showAllMenu = array => {
-  // console.log(array);
-
   const showFoods = array.map(item => {
-    let food = item.name + item.price;
-    console.log(item.name, item.price);
+    let food = `
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${item.name}</h5>
+          <p class="card-text">Rp ${item.price}</p>
+          <a href="#" class="btn btn-primary">Pesan</a>
+        </div>
+      </div>
+    </div>
+    `;
+
     return food;
   });
 
