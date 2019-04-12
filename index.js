@@ -3,19 +3,21 @@ const menuList = [
     id: 1,
     name: "Nasi Goreng",
     price: 10000,
-    category: "menu nasi"
+    category: "menu nasi",
+    image: "assets/thumbnails/nasi-goreng.jpg"
   },
   {
     id: 2,
     name: "Sate Ayam",
     price: 15000,
-    category: "menu daginng"
+    category: "menu daginng",
+    image: "assets/thumbnails/nasi-goreng.jpg"
   },
   {
     id: 3,
     name: "Sayur Asem",
     price: 13000,
-    category: "menu nasi"
+    category: "menu sayur"
   },
   {
     id: 4,
@@ -25,16 +27,19 @@ const menuList = [
   }
 ];
 
-const foodName = menuList.map(item => item.name);
-const foodPrice = menuList.map(item => item.price);
-const foodCategory = menuList.map(item => item.category);
+const showAllMenu = array => {
+  // console.log(array);
 
-const showAllMenu = () => {
-  const allMenu = (document.getElementById("menu-grid").innerHTML =
-    foodName + foodPrice + foodCategory);
+  const showFoods = array.map(item => {
+    let food = item.name + item.price;
+    console.log(item.name, item.price);
+    return food;
+  });
 
-  console.log(allMenu);
-  return allMenu;
+  return (document.getElementById("menu-grid").innerHTML = showFoods);
 };
 
-showAllMenu();
+showAllMenu(menuList);
+
+// ===============
+// Function menampilkan pesanan
