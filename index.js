@@ -43,27 +43,46 @@ const menuList = [
   }
 ];
 
-// ===============
+const orderList = [];
+
+// =========================================================================================
+// Delete Order item
+const deleteOrder = id => {
+  orderList.splice(id, 1);
+};
+//Still Not working
+
+// =========================================================================================
 // Input Order via button
 const inputOrder = order => {
-  // let orderList = [];
-
   if (order === menuList[order - 1].id) {
-    orderPill = `
-     <div class="col">
-       <span>${menuList[order - 1].name}</span>
+    orderList.push(menuList[order - 1]);
+  }
+
+  const showOrderList = orderList.map(orders => {
+    let orderPill = `
+    <div class="col">
+        <span>${orders.name}</span>
      </div>
      <div class="col">
-       <span>Rp ${menuList[order - 1].price}</span>
-     </div>`;
-    // orderList.push(orderPill);
-    // orderList.push(menuList[order - 1]);
-  }
-  // console.log(orderList);
-  return (document.getElementById("menu-pill").innerHTML += orderPill);
+        <span>Rp ${orders.price}</span>
+     </div>
+     <div classs="col">
+        <button onClick="deleteOrder(${orders.id})">
+          <img src="assets/icons/delete.png" style="z-index: 1;">
+        </button>
+     </div>
+    `;
+
+    return orderPill;
+  });
+
+  console.log(orderList);
+  return (document.getElementById("menu-pill").innerHTML = showOrderList);
 };
 // End of Input Order via button
 
+// ===========================================================================================
 // Show All Menu
 const showAllMenu = array => {
   const showFoods = array.map(menu => {
