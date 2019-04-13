@@ -43,20 +43,44 @@ const menuList = [
   }
 ];
 
+// ===============
+// Input Order via button
+const inputOrder = order => {
+  let orderList = [];
+
+  if (order === menuList[order - 1].id) {
+    // orderPill = `
+    //  <div class="col">
+    //    <span>${menuList[order - 1].name}</span>
+    //  </div>
+    //  <div class="col">
+    //    <span>Rp ${menuList[order - 1].price}</span>
+    //  </div>`;
+    // orderList.push(orderPill);
+    orderList.push(menuList[order - 1]);
+  }
+  console.log(orderList);
+  // return (document.getElementById("menu-pill").innerHTML = orderList);
+};
+// End of Input Order via button
+
+// Show All Menu
 const showAllMenu = array => {
-  const showFoods = array.map(item => {
+  const showFoods = array.map(menu => {
     let food = `
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src="${item.image}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${item.name}</h5>
-          <p class="card-text">Rp ${item.price}</p>
-          <a href="#" class="btn btn-primary">Pesan</a>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="${menu.image}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">${menu.name}</h5>
+            <p class="card-text">Rp ${menu.price}</p>
+            <button onClick="inputOrder(${
+              menu.id
+            })" class="btn btn-primary">Pesan</button>
+          </div>
         </div>
       </div>
-    </div>
-    `;
+      `;
 
     return food;
   });
@@ -65,6 +89,3 @@ const showAllMenu = array => {
 };
 
 showAllMenu(menuList);
-
-// ===============
-// Function menampilkan pesanan
