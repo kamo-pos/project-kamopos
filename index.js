@@ -46,21 +46,21 @@ const menuList = [
 // ===============
 // Input Order via button
 const inputOrder = order => {
-  let orderList = [];
+  // let orderList = [];
 
   if (order === menuList[order - 1].id) {
-    // orderPill = `
-    //  <div class="col">
-    //    <span>${menuList[order - 1].name}</span>
-    //  </div>
-    //  <div class="col">
-    //    <span>Rp ${menuList[order - 1].price}</span>
-    //  </div>`;
+    orderPill = `
+     <div class="col">
+       <span>${menuList[order - 1].name}</span>
+     </div>
+     <div class="col">
+       <span>Rp ${menuList[order - 1].price}</span>
+     </div>`;
     // orderList.push(orderPill);
-    orderList.push(menuList[order - 1]);
+    // orderList.push(menuList[order - 1]);
   }
-  console.log(orderList);
-  // return (document.getElementById("menu-pill").innerHTML = orderList);
+  // console.log(orderList);
+  return (document.getElementById("menu-pill").innerHTML += orderPill);
 };
 // End of Input Order via button
 
