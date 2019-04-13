@@ -17,13 +17,29 @@ const menuList = [
     id: 3,
     name: "Sayur Asem",
     price: 13000,
-    category: "menu sayur"
+    category: "menu sayur",
+    image: "assets/thumbnails/nasi-goreng.jpg"
   },
   {
     id: 4,
     name: "Teh Manis",
     price: 5000,
-    category: "minuman"
+    category: "minuman",
+    image: "assets/thumbnails/nasi-goreng.jpg"
+  },
+  {
+    id: 5,
+    name: "Air Putih",
+    price: 500,
+    category: "minuman",
+    image: "assets/thumbnails/nasi-goreng.jpg"
+  },
+  {
+    id: 6,
+    name: "Mie Ayam",
+    price: 12000,
+    category: "makaanan",
+    image: "assets/thumbnails/nasi-goreng.jpg"
   }
 ];
 
@@ -32,7 +48,7 @@ const showAllMenu = array => {
     let food = `
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="${item.image}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${item.name}</h5>
           <p class="card-text">Rp ${item.price}</p>
@@ -45,7 +61,7 @@ const showAllMenu = array => {
     return food;
   });
 
-  return (document.getElementById("menu-grid").innerHTML = showFoods);
+  return (document.getElementById("menu-row").innerHTML = showFoods);
 };
 
 showAllMenu(menuList);
