@@ -4,7 +4,7 @@ const menuList = [
     name: "Nasi Goreng",
     price: 10000,
     category: "menu nasi",
-    image: "./assets/thumbnails/nasi-goreng.jpg"
+    image: "assets/thumbnails/nasi-goreng.jpg"
   },
   {
     id: 2,
@@ -40,64 +40,29 @@ const menuList = [
     price: 12000,
     category: "makaanan",
     image: "assets/thumbnails/nasi-goreng.jpg"
+  },
+  {
+    id: 7,
+    name: "Bubur Ayam",
+    price: 12000,
+    category: "makaanan",
+    image: "assets/thumbnails/nasi-goreng.jpg"
   }
 ];
 
 const orderList = [];
-
-// =========================================================================================
-// Delete Order item
-const deleteOrder = id => {
-  orderList.slice(id, 1);
-};
-//Still Not working
-
-// =========================================================================================
-// Input Order via button
-const inputOrder = order => {
-  if (order === menuList[order - 1].id) {
-    orderList.push(menuList[order - 1]);
-  }
-
-  const showOrderList = orderList.map(orders => {
-    let orderPill = `
-    <div class="col">
-        <span>${orders.name}</span>
-     </div>
-     <div class="col">
-        <span>Rp ${orders.price}</span>
-     </div>
-     <div classs="col">
-        <button onClick="deleteOrder(${orders.id})">
-          <img src="assets/icons/delete.png" style="z-index: 1;">
-        </button>
-     </div>
-    `;
-
-    return orderPill;
-  });
-
-  console.log(orderList);
-  return (document.getElementById("menu-pill").innerHTML = showOrderList);
-};
-// End of Input Order via button
-
 // ===========================================================================================
 // Show All Menu
 const showAllMenu = array => {
   const showFoods = array.map(menu => {
     let food = `
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="${menu.image}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${menu.name}</h5>
-            <p class="card-text">Rp ${menu.price}</p>
-            <button onClick="inputOrder(${
-              menu.id
-            })" class="btn btn-primary">Pesan</button>
-          </div>
-        </div>
+      <div class="food-data">
+        <img src="${menu.image}" alt="" />
+        <p class="food-name">${menu.name}</p>
+        <p>${menu.price}</p>
+        <button onclick="inputOrder(${menu.id})">
+          <p class="order">Order</p>
+        </button>
       </div>
       `;
 
@@ -108,3 +73,107 @@ const showAllMenu = array => {
 };
 
 showAllMenu(menuList);
+
+// =========================================================================================
+// Input Order via button
+
+const inputOrder = order => {
+  if (order === menuList[order - 1].id) {
+    orderList.push(menuList[order - 1]);
+  }
+
+  const showOrderList = orderList.map(orders => {
+    let orderTableData = `
+    <tr>
+      <td class="food">${orders.name}</td>
+      <td class="price">${orders.price}</td>
+      <td class="quantity">
+        <input type="number" value="1" />
+      </td>
+      <td class="delete">
+        <button onClick="deleteOrder()">
+          X
+        </button>
+      </td>
+    </tr>
+    `;
+
+    return orderTableData;
+  });
+
+  totalCharge(orderList);
+  return (document.getElementById("menu-table").innerHTML = showOrderList);
+};
+// End of Input Order via button
+
+// =========================================================================================
+// Delete Order item
+const deleteOrder = () => {
+  orderList.splice(0, 1); // Ini Chris yang menemukan idenya, yeay!!! :)
+
+  const showOrderList = orderList.map(orders => {
+    let orderTableData = `
+    <tr>
+      <td class="food">${orders.name}</td>
+      <td class="price">${orders.price}</td>
+      <td class="quantity">
+        <input type="number" value="1" />
+      </td>
+      <td class="delete">
+        <button onClick="deleteOrder()">
+          X
+        </button>
+      </td>
+    </tr>
+    `;
+
+    return orderTableData;
+  });
+
+  totalCharge(orderList);
+  return (document.getElementById("menu-table").innerHTML = showOrderList);
+};
+
+//===================================================
+// Function Total Charge
+
+const totalCharge = orderListParam => {
+  let priceTotal = 0;
+
+  for (i = 0; i < orderListParam.length; i++) {
+    priceTotal += orderListParam[i].price;
+  }
+
+  console.log(priceTotal);
+  return (document.getElementById(
+    "total-charge"
+  ).innerHTML = `Total Charge:  ${priceTotal}`);
+};
+
+//==================================================
+
+const clearAllOrder = () => {
+  orderList.splice(0)
+
+  const showOrderList = orderList.map(orders => {
+    let orderTableData = `
+    <tr>
+      <td class="food">${orders.name}</td>
+      <td class="price">${orders.price}</td>
+      <td class="quantity">
+        <input type="number" value="1" />
+      </td>
+      <td class="delete">
+        <button onClick="deleteOrder()">
+          X
+        </button>
+      </td>
+    </tr>
+    `;
+
+    return orderTableData;
+  });
+
+  totalCharge(orderList);
+  return (document.getElementById("menu-table").innerHTML = showOrderList);
+};

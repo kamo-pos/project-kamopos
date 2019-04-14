@@ -1,0 +1,141 @@
+.navbar {
+  background-color: #ffffff;
+  padding: 20px 50px;
+
+}
+
+nav img {
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #000000;
+}
+
+
+.row .col {
+  padding: 50px 10px;
+}
+
+.food-choices {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.food-data {
+  padding: 0px 20px;
+  margin-bottom: 50px;
+}
+
+.food-data button {
+  width: 100%;
+  border-style: none;
+  padding: 0px;
+}
+
+.food-choices .food-data p {
+  text-align: left;
+  padding: 10px 30px;
+  margin: 0px;
+  background-color: rgb(245, 245, 245);
+}
+
+.food-choices .food-data .food-name {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.food-choices .food-data .order {
+  background-color: rgb(5, 68, 143);
+  color: #ffffff;
+  padding: 10px;
+  margin: 0px;
+  text-align: center;
+}
+
+.purchase-data {
+  text-align: center;
+}
+
+.purchase-data h3 {
+  background-color: rgb(5, 68, 143);
+  color: #ffffff;
+  padding: 10px;
+  margin: 0px;
+}
+
+.purchase-data h4 {
+  background-color: rgb(245, 245, 245);
+  padding: 10px;
+  margin: 0px;
+}
+
+.purchase-data table {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  margin: 0px;
+}
+
+.purchase-data table td {
+  margin: 0px 10px;
+  padding: 10px;
+}
+
+.purchase-data table .food,
+.purchase-data table .price {
+  width: 40%;
+}
+
+.purchase-data table input {
+  width: 40px;
+}
+
+.purchase-data .delete {
+  width: 30px;
+}
+
+.clear-purchase-data {
+  background-color: rgb(245, 245, 245);
+  padding: 15px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.clear-purchase-data p {
+  margin: 0px;
+}
+
+.bill-container {
+  padding: 0px 15px;
+}
+
+.save-bill,
+.print-bill {
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  padding: 15px !important;
+  margin-top: 30px;
+}
+
+.save-bill {
+  margin-right: 15px;
+}
+
+.print-bill {
+  margin-left: 15px;
+}
+
+.bill-container p {
+  margin: 0px;
+}
+
+.total-charge {
+  background-color: rgb(5, 68, 143);
+  color: #ffffff;
+  padding: 15px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.total-charge p {
+  margin: 0px;
+  font-size: 22px;
+}
