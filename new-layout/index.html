@@ -1,144 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" href="kamopos.css" />
-    <title>Kamo POS</title>
-  </head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-  <body>
-    <nav class="navbar navbar-light">
-      <a class="navbar-brand" href="#">
-        <img
-          src="assets/logos/Webp.net-resizeimage (6).png"
-          width="60"
-          alt=""
-        />
-      </a>
-    </nav>
+  <link rel="stylesheet" href="index.css">
+  <title>Kamo POS</title>
+</head>
 
-    <div class="container">
-      <div class="row">
-        <div class="col food-choices">
-          <div class="food-data">
-            <img src="assets/images/nasi-goreng.jpg" alt="" />
-            <p class="food-name">Nasi Goreng</p>
-            <p>Rp. 10.000</p>
-            <button>
-              <p class="order">Order</p>
-            </button>
+<body>
+  <nav class="navbar navbar-light">
+    <a class="navbar-brand" href="#">
+      <img src="assets/logos/kamo-logo.png" width="60" alt="" />
+    </a>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col food-choices">
+        <div class="food-data">
+          <img src="assets/images/nasi-goreng.jpg" alt="" />
+          <p class="food-name">Nasi Goreng</p>
+          <p>Rp. 10.000</p>
+          <button>
+            <p class="order">Order</p>
+          </button>
+        </div>
+        <div class="food-data">
+          <img src="assets/images/nasi-goreng.jpg" alt="" />
+          <p class="food-name">Nasi Goreng</p>
+          <p>Rp. 10.000</p>
+          <button>
+            <p class="order">Order</p>
+          </button>
+        </div>
+      </div>
+      <div class="col food-choices">
+        <div class="food-data">
+          <img src="assets/images/nasi-goreng.jpg" alt="" />
+          <p class="food-name">Nasi Goreng</p>
+          <p>Rp. 10.000</p>
+          <button>
+            <p class="order">Order</p>
+          </button>
+        </div>
+        <div class="food-data">
+          <img src="assets/images/nasi-goreng.jpg" alt="" />
+          <p class="food-name">Nasi Goreng</p>
+          <p>Rp. 10.000</p>
+          <button>
+            <p class="order">Order</p>
+          </button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="purchase-data">
+          <h3>New Customer</h3>
+          <h4>Dine in</h4>
+          <table>
+            <tr>
+              <td class="food">Food</td>
+              <td class="price">Price</td>
+              <td class="quantity">
+                <input type="number" value="1" />
+              </td>
+              <td class="delete">
+                #
+              </td>
+            </tr>
+            <tr>
+              <td class="food">Food</td>
+              <td class="price">Price</td>
+              <td class="quantity">
+                <input type="number" value="1" />
+              </td>
+              <td class="delete">
+                #
+              </td>
+            </tr>
+            <tr>
+              <td class="food">Food</td>
+              <td class="price">Price</td>
+              <td class="quantity">
+                <input type="number" value="1" />
+              </td>
+              <td class="delete">
+                #
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="clear-purchase-data">
+          <p>Clear Sale</p>
+        </div>
+        <div class="row bill-container">
+          <div class="col save-bill">
+            <p>Save Bill</p>
           </div>
-          <div class="food-data">
-            <img src="assets/images/nasi-goreng.jpg" alt="" />
-            <p class="food-name">Nasi Goreng</p>
-            <p>Rp. 10.000</p>
-            <button>
-              <p class="order">Order</p>
-            </button>
+          <div class="col print-bill">
+            <p>Print Bill</p>
           </div>
         </div>
-        <div class="col food-choices">
-          <div class="food-data">
-            <img src="assets/images/nasi-goreng.jpg" alt="" />
-            <p class="food-name">Nasi Goreng</p>
-            <p>Rp. 10.000</p>
-            <button>
-              <p class="order">Order</p>
-            </button>
-          </div>
-          <div class="food-data">
-            <img src="assets/images/nasi-goreng.jpg" alt="" />
-            <p class="food-name">Nasi Goreng</p>
-            <p>Rp. 10.000</p>
-            <button>
-              <p class="order">Order</p>
-            </button>
-          </div>
-        </div>
-        <div class="col">
-          <div class="purchase-data">
-            <h3>New Customer</h3>
-            <h4>Dine in</h4>
-            <table>
-              <tr>
-                <td class="food">Food</td>
-                <td class="price">Price</td>
-                <td class="quantity">
-                  <input type="number" value="1" />
-                </td>
-                <td class="delete">
-                  #
-                </td>
-              </tr>
-              <tr>
-                <td class="food">Food</td>
-                <td class="price">Price</td>
-                <td class="quantity">
-                  <input type="number" value="1" />
-                </td>
-                <td class="delete">
-                  #
-                </td>
-              </tr>
-              <tr>
-                <td class="food">Food</td>
-                <td class="price">Price</td>
-                <td class="quantity">
-                  <input type="number" value="1" />
-                </td>
-                <td class="delete">
-                  #
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div class="clear-purchase-data">
-            <p>Clear Sale</p>
-          </div>
-          <div class="row bill-container">
-            <div class="col save-bill">
-              <p>Save Bill</p>
-            </div>
-            <div class="col print-bill">
-              <p>Print Bill</p>
-            </div>
-          </div>
-          <div class="total-charge">
-            <p>Total Charge = Rp. 100.000</p>
-          </div>
+        <div class="total-charge">
+          <p>Total Charge = Rp. 100.000</p>
         </div>
       </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>
