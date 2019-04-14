@@ -55,7 +55,6 @@ const orderList = [];
 // Show All Menu
 const showAllMenu = array => {
   const showFoods = array.map(menu => {
-    console.log(menu);
     let food = `
       <div class="food-data">
         <img src="${menu.image}" alt="" />
@@ -92,7 +91,7 @@ const inputOrder = order => {
         <input type="number" value="1" />
       </td>
       <td class="delete">
-        <button onClick="deleteOrder(${orders.id})">
+        <button onClick="deleteOrder()">
           X
         </button>
       </td>
@@ -102,7 +101,7 @@ const inputOrder = order => {
     return orderTableData;
   });
 
-  console.log(orderList);
+  totalCharge(orderList);
   return (document.getElementById("menu-table").innerHTML = showOrderList);
 };
 // End of Input Order via button
@@ -121,7 +120,7 @@ const deleteOrder = () => {
         <input type="number" value="1" />
       </td>
       <td class="delete">
-        <button onClick="deleteOrder(${orders.id})">
+        <button onClick="deleteOrder()">
           X
         </button>
       </td>
@@ -131,6 +130,22 @@ const deleteOrder = () => {
     return orderTableData;
   });
 
-  console.log(orderList);
+  totalCharge(orderList);
   return (document.getElementById("menu-table").innerHTML = showOrderList);
+};
+
+//===================================================
+// Function Total Charge
+
+const totalCharge = orderListParam => {
+  let priceTotal = 0;
+
+  for (i = 0; i < orderListParam.length; i++) {
+    priceTotal += orderListParam[i].price;
+  }
+
+  console.log(priceTotal);
+  return (document.getElementById(
+    "total-charge"
+  ).innerHTML = `Total Harga:  ${priceTotal}`);
 };
