@@ -93,7 +93,7 @@ const inputOrder = order => {
         <input type="number" value="1" />
       </td>
       <td class="delete">
-        <button onclick="inputOrder(${orders.id})">
+        <button onClick="deleteOrder(${orders.id})">
           X
         </button>
       </td>
@@ -107,3 +107,34 @@ const inputOrder = order => {
   return (document.getElementById("menu-table").innerHTML = showOrderList);
 };
 // End of Input Order via button
+
+// =========================================================================================
+// Delete Order item
+const deleteOrder = id => {
+  // if (id === menuList[id - 1].id) {
+
+  // }
+  orderList.splice(id, 1);
+
+  const showOrderList = orderList.map(orders => {
+    let orderTableData = `
+    <tr>
+      <td class="food">${orders.name}</td>
+      <td class="price">${orders.price}</td>
+      <td class="quantity">
+        <input type="number" value="1" />
+      </td>
+      <td class="delete">
+        <button onClick="deleteOrder(${orders.id})">
+          X
+        </button>
+      </td>
+    </tr>
+    `;
+
+    return orderTableData;
+  });
+
+  console.log(orderList);
+  return (document.getElementById("menu-table").innerHTML = showOrderList);
+};
