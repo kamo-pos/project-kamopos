@@ -16,6 +16,8 @@ nav img {
 
 .food-choices {
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .food-data {
