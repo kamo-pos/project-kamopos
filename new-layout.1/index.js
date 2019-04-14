@@ -40,15 +40,21 @@ const menuList = [
     price: 12000,
     category: "makaanan",
     image: "assets/images/nasi-goreng.jpg"
+  },
+  {
+    id: 7,
+    name: "Bubur Ayam",
+    price: 12000,
+    category: "makaanan",
+    image: "assets/images/nasi-goreng.jpg"
   }
 ];
-
-const orderList = [];
 
 // ===========================================================================================
 // Show All Menu
 const showAllMenu = array => {
   const showFoods = array.map(menu => {
+    console.log(menu);
     let food = `
       <div class="food-data">
         <img src="${menu.image}" alt="" />
@@ -67,3 +73,37 @@ const showAllMenu = array => {
 };
 
 showAllMenu(menuList);
+
+// =========================================================================================
+// Input Order via button
+
+const orderList = [];
+
+const inputOrder = order => {
+  if (order === menuList[order - 1].id) {
+    orderList.push(menuList[order - 1]);
+  }
+
+  const showOrderList = orderList.map(orders => {
+    let orderTableData = `
+    <tr>
+      <td class="food">${orders.name}</td>
+      <td class="price">${orders.price}</td>
+      <td class="quantity">
+        <input type="number" value="1" />
+      </td>
+      <td class="delete">
+        <button onclick="inputOrder(${orders.id})">
+          X
+        </button>
+      </td>
+    </tr>
+    `;
+
+    return orderTableData;
+  });
+
+  console.log(orderList);
+  return (document.getElementById("menu-table").innerHTML = showOrderList);
+};
+// End of Input Order via button

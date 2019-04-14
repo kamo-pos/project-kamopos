@@ -48,7 +48,7 @@ const orderList = [];
 // =========================================================================================
 // Delete Order item
 const deleteOrder = id => {
-  orderList.splice(id, 1);
+  orderList.slice(id, 1);
 };
 //Still Not working
 
