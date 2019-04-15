@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/logos/kamo-logo.ico"
+      type="image/x-icon"
+    />
+    <title>Kamo POS</title>
+  </head>
 
-  <link rel="stylesheet" href="index.css" />
-  <link rel="shortcut icon" href="assets/logos/kamo-logo.ico" type="image/x-icon">
-  <title>Kamo POS</title>
-</head>
+  <body>
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logos/kamo-logo.png" width="60" alt="" />
+      </a>
+    </nav>
 
-<body>
-  <nav class="navbar navbar-light">
-    <a class="navbar-brand" href="#">
-      <img src="assets/logos/kamo-logo.png" width="60" alt="" />
-    </a>
-  </nav>
-
-  <div class="container">
-    <div class="row">
-      <div id="menu-row" class="col-8 food-choices">
-      </div>
-      <div class="col-4">
-        <div class="purchase-data">
-          <h3>New Customer</h3>
-          <h4>Dine in</h4>
-          <table id="menu-table"></table>
-        </div>
-        <div onclick="clearAllOrder()" id="clear-sale" class="clear-purchase-data">
-          <p>Clear Sale</p>
-        </div>
-        <div class="row bill-container">
-          <div class="col save-bill">
-            <p>Save Bill</p>
+    <div class="container">
+      <div class="row">
+        <div id="menu-row" class="col-8 food-choices"></div>
+        <div class="col-4">
+          <div class="purchase-data">
+            <h3>New Customer</h3>
+            <h4>Dine in</h4>
+            <table id="menu-table"></table>
           </div>
-          <div class="col print-bill">
-            <p>Print Bill</p>
+          <div
+            onclick="clearAllOrder()"
+            id="clear-sale"
+            class="clear-purchase-data"
+          >
+            <p>Clear Sale</p>
           </div>
-        </div>
-        <div class="total-charge">
-          <p id="total-charge">Total Charge</p>
+          <div class="row bill-container">
+            <div class="col save-bill">
+              <p>Save Bill</p>
+            </div>
+            <div class="col print-bill">
+              <p>Print Bill</p>
+            </div>
+          </div>
+          <div class="total-charge">
+            <p id="total-charge">Total Charge</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="index.js"></script>
-</body>
-
+    <script src="data.js"></script>
+    <script src="function.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
