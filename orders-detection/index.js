@@ -21,7 +21,10 @@ const renderFoodsDOM = data => {
     const { id, name, price } = item
 
     document.getElementById('foods').innerHTML += `
-      <li>${id}: ${name}: ${formatToRupiah.format(price)}</li>
+      <li>
+        <span>${id}: ${name}: ${formatToRupiah.format(price)}</span>
+        <button onclick="addFoodToOrders(${id})">Add</button>
+      </li>
     `
   })
 }
@@ -29,7 +32,11 @@ const renderFoodsDOM = data => {
 // -----------------------------------------------------------------------------
 
 const renderOrdersConsole = data => {
+  // clear console
+  console.clear()
+
   const registeredFoods = []
+  let totalOrdersCharge = 0
 
   data.forEach((item, itemIndex) => {
     const dataPairs = data
@@ -58,22 +65,25 @@ const renderOrdersConsole = data => {
         }
       })
 
+      const totalFoodPrice = foundFood.price * foodQuantity
+      totalOrdersCharge += totalFoodPrice
+
       // -----------------------------------------------------------------------
       // only show if the food has not been shown yet
       console.log(`
-        Food: ${foundFood.name}
-        Quantity: ${foodQuantity}
-        Price: ${formatToRupiah.format(foundFood.price * foodQuantity)}
+Food: ${foundFood.name}
+Quantity: ${foodQuantity}
+Price: ${formatToRupiah.format(totalFoodPrice)}
       `)
     }
   })
-}
 
-const addFoodToOrders = () => {}
+  console.log(`Total Charge: ${formatToRupiah.format(totalOrdersCharge)}`)
+}
 
 // -----------------------------------------------------------------------------
 
 // renderFoodsConsole(dataFoods)
 renderFoodsDOM(dataFoods)
 
-renderOrdersConsole(dataOrders)
+renderOrdersConsole(dataOrders.data)

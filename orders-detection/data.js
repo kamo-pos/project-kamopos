@@ -36,7 +36,7 @@ const dataFoods = [
   }
 ]
 
-const dataOrders = [
+const dataOrdersDummy = [
   {
     id: 1,
     foodId: 1
@@ -52,5 +52,22 @@ const dataOrders = [
   {
     id: 4,
     foodId: 6
+  },
+  {
+    id: 5,
+    foodId: 2
+  },
+  {
+    id: 5,
+    foodId: 2
+  },
+  {
+    id: 6,
+    foodId: 5
   }
 ]
+
+const dataOrders = {
+  nextId: 0,
+  data: []
+}
