@@ -3,8 +3,8 @@
 
 const inputOrder = order => {
   if (order === menuList[order - 1].id && order) {
-    orderList.push(menuList[order - 1]); //gimana cara nambahin quantity key ke array of object
-    console.log(orderList);
+    orderList.push(menuList[order - 1]) //gimana cara nambahin quantity key ke array of object
+    console.log(orderList)
   }
 
   // for (let i = 0; i < order.length; i++) {}
@@ -26,7 +26,7 @@ const inputOrder = order => {
     let orderTableData = `
     <tr>
       <td class="food">${orders.name}</td>
-      <td class="price">${formatter.format(orders.price)} ,-</td>
+      <td class="price">${formatter.format(orders.price)}</td>
       <td class="quantity">
         <input type="number" value="1" />
       </td>
@@ -36,12 +36,12 @@ const inputOrder = order => {
         </button>
       </td>
     </tr>
-    `;
+    `
 
-    return orderTableData;
-  });
+    return orderTableData
+  })
 
-  totalCharge(orderList);
-  document.getElementById("menu-table").innerHTML = showOrderList;
-};
+  totalCharge(orderList)
+  document.getElementById('menu-table').innerHTML = showOrderList
+}
 // End of Input Order via button
