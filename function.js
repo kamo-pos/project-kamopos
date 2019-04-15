@@ -8,22 +8,31 @@ const formatter = new Intl.NumberFormat('id-ID', {
 // Show All Menu
 const showAllMenu = array => {
   array.forEach(menu => {
-    document.getElementById('menu-row').innerHTML += `<div class="food-data">
+    let foodDiv = `
+      <div class="food-data">
         <img src="${menu.image}" alt="" />
         <p class="food-name">${menu.name}</p>
-        <p>${formatter.format(menu.price)} ,-</p>
+        <p>${formatter.format(menu.price)}</p>
         <button onclick="inputOrder(${menu.id})">
           <p class="order">Order</p>
         </button>
-      </div>`
+      </div>
+      `
+
+    document.getElementById('menu-row').innerHTML += foodDiv
   })
 }
 
-// =========================================================================================
+// =============================================================================
 // Delete Order item
 const deleteOrder = () => {
   orderList.splice(0, 1) // Ini Chris yang menemukan idenya, yeay!!! :)
 
+  totalCharge(orderList)
+  showOrderList(orderList)
+}
+
+const showOrderList = orderList => {
   const showOrderList = orderList.map(orders => {
     let orderTableData = `
     <tr>
@@ -40,26 +49,22 @@ const deleteOrder = () => {
     </tr>
     `
 
-    return orderTableData
+    document.getElementById('menu-table').innerHTML += orderTableData
   })
-
-  totalCharge(orderList)
-  return (document.getElementById('menu-table').innerHTML = showOrderList)
 }
 
 //===================================================
 // Function Total Charge
 
-const totalCharge = orderListParam => {
+const totalCharge = orderList => {
   let priceTotal = 0
 
-  for (i = 0; i < orderListParam.length; i++) {
-    priceTotal += orderListParam[i].price
-  }
+  orderList.forEach(order => {
+    priceTotal += order.price
+  })
 
-  return (document.getElementById(
-    'total-charge'
-  ).innerHTML = `Total Charge:  ${formatter.format(priceTotal)} ,-`)
+  const totalText = formatter.format(priceTotal)
+  document.getElementById('total-charge').innerHTML = totalText
 }
 
 //==================================================
@@ -68,25 +73,6 @@ const totalCharge = orderListParam => {
 const clearAllOrder = () => {
   orderList.splice(0)
 
-  const showOrderList = orderList.map(orders => {
-    let orderTableData = `
-    <tr>
-      <td class="food">${orders.name}</td>
-      <td class="price">${orders.price}</td>
-      <td class="quantity">
-        <input type="number" value="1" />
-      </td>
-      <td class="delete">
-        <button onClick="deleteOrder()">
-          X
-        </button>
-      </td>
-    </tr>
-    `
-
-    return orderTableData
-  })
-
-  totalCharge(orderList)
-  return (document.getElementById('menu-table').innerHTML = showOrderList)
+  document.getElementById('total-charge').innerHTML = formatter.format(0)
+  document.getElementById('menu-table').innerHTML = ''
 }
