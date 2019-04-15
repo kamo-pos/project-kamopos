@@ -97,6 +97,7 @@ nav img {
   padding: 15px;
   margin-top: 30px;
   text-align: center;
+  cursor: pointer;
 }
 
 .clear-purchase-data p {

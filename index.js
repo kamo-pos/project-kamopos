@@ -1,5 +1,4 @@
-const menuList = [
-  {
+const menuList = [{
     id: 1,
     name: "Nasi Goreng",
     price: 10000,
