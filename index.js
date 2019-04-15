@@ -50,6 +50,14 @@ const menuList = [{
 ];
 
 const orderList = [];
+
+const formatter = new Intl.NumberFormat('id-ID', {
+  style: 'currency',
+  currency: 'IDR',
+  minimumFractionDigits: 0
+})
+
+
 // ===========================================================================================
 // Show All Menu
 const showAllMenu = array => {
@@ -58,7 +66,7 @@ const showAllMenu = array => {
       <div class="food-data">
         <img src="${menu.image}" alt="" />
         <p class="food-name">${menu.name}</p>
-        <p>Rp. ${menu.price}</p>
+        <p>${formatter.format(menu.price)} ,-</p>
         <button onclick="inputOrder(${menu.id})">
           <p class="order">Order</p>
         </button>
@@ -70,6 +78,8 @@ const showAllMenu = array => {
 
   return (document.getElementById("menu-row").innerHTML = showFoods);
 };
+
+
 
 showAllMenu(menuList);
 
@@ -85,7 +95,7 @@ const inputOrder = order => {
     let orderTableData = `
     <tr>
       <td class="food">${orders.name}</td>
-      <td class="price">${orders.price}</td>
+      <td class="price">${formatter.format(orders.price)},-</td>
       <td class="quantity">
         <input type="number" value="1" />
       </td>
@@ -146,7 +156,7 @@ const totalCharge = orderListParam => {
   console.log(priceTotal);
   return (document.getElementById(
     "total-charge"
-  ).innerHTML = `Total Charge:  ${priceTotal}`);
+  ).innerHTML = `Total Charge:  ${formatter.format(priceTotal)},-`);
 };
 
 //==================================================
