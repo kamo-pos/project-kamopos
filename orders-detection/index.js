@@ -63,7 +63,7 @@ const renderOrdersConsole = data => {
       console.log(`
         Food: ${foundFood.name}
         Quantity: ${foodQuantity}
-        Price: ${formatToRupiah.format(foundFood.price)}
+        Price: ${formatToRupiah.format(foundFood.price * foodQuantity)}
       `)
     }
   })
