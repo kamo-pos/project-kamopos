@@ -58,7 +58,7 @@ const showAllMenu = array => {
       <div class="food-data">
         <img src="${menu.image}" alt="" />
         <p class="food-name">${menu.name}</p>
-        <p>${menu.price}</p>
+        <p>Rp. ${menu.price}</p>
         <button onclick="inputOrder(${menu.id})">
           <p class="order">Order</p>
         </button>
