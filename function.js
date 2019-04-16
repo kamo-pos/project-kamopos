@@ -1,6 +1,6 @@
-const formatter = new Intl.NumberFormat('id-ID', {
-  style: 'currency',
-  currency: 'IDR',
+const formatter = new Intl.NumberFormat("id-ID", {
+  style: "currency",
+  currency: "IDR",
   minimumFractionDigits: 0
 })
 
@@ -19,7 +19,7 @@ const showAllMenu = array => {
       </div>
       `
 
-    document.getElementById('menu-row').innerHTML += foodDiv
+    document.getElementById("menu-row").innerHTML += foodDiv
   })
 }
 
@@ -28,28 +28,28 @@ const showAllMenu = array => {
 const deleteOrder = () => {
   orderList.splice(0, 1) // Ini Chris yang menemukan idenya, yeay!!! :)
 
+  console.log(orderList)
   totalCharge(orderList)
-  showOrderList(orderList)
-}
 
-const showOrderList = orderList => {
-  const showOrderList = orderList.map(orders => {
-    let orderTableData = `
-    <tr>
-      <td class="food">${orders.name}</td>
-      <td class="price">${orders.price}</td>
-      <td class="quantity">
-        <input type="number" value="1" />
-      </td>
-      <td class="delete">
-        <button onClick="deleteOrder()">
-          X
-        </button>
-      </td>
-    </tr>
+  document.getElementById("menu-table").innerHTML = ""
+
+  orderList.forEach(orders => {
+    let orderTableRow = `
+      <tr>
+        <td class="food">${orders.name}</td>
+        <td class="price">${formatter.format(orders.price)}</td>
+        <td class="quantity">
+          <input type="number" value="1" />
+        </td>
+        <td class="delete">
+          <button onClick="deleteOrder()">
+            X
+          </button>
+        </td>
+      </tr>
     `
 
-    document.getElementById('menu-table').innerHTML += orderTableData
+    document.getElementById("menu-table").innerHTML += orderTableRow
   })
 }
 
@@ -64,7 +64,7 @@ const totalCharge = orderList => {
   })
 
   const totalText = formatter.format(priceTotal)
-  document.getElementById('total-charge').innerHTML = totalText
+  document.getElementById("total-charge").innerHTML = totalText
 }
 
 //==================================================
@@ -73,6 +73,6 @@ const totalCharge = orderList => {
 const clearAllOrder = () => {
   orderList.splice(0)
 
-  document.getElementById('total-charge').innerHTML = formatter.format(0)
-  document.getElementById('menu-table').innerHTML = ''
+  document.getElementById("total-charge").innerHTML = formatter.format(0)
+  document.getElementById("menu-table").innerHTML = ""
 }
