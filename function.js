@@ -31,26 +31,7 @@ const deleteOrder = () => {
   console.log(orderList)
   totalCharge(orderList)
 
-  document.getElementById("menu-table").innerHTML = ""
-
-  orderList.forEach(orders => {
-    let orderTableRow = `
-      <tr>
-        <td class="food">${orders.name}</td>
-        <td class="price">${formatter.format(orders.price)}</td>
-        <td class="quantity">
-          <input type="number" value="1" />
-        </td>
-        <td class="delete">
-          <button onClick="deleteOrder()">
-            X
-          </button>
-        </td>
-      </tr>
-    `
-
-    document.getElementById("menu-table").innerHTML += orderTableRow
-  })
+  renderOrderList()
 }
 
 //===================================================
@@ -75,4 +56,30 @@ const clearAllOrder = () => {
 
   document.getElementById("total-charge").innerHTML = formatter.format(0)
   document.getElementById("menu-table").innerHTML = ""
+}
+
+// ==================================================
+// Render order list
+
+const renderOrderList = () => {
+  document.getElementById("menu-table").innerHTML = ""
+
+  orderList.forEach(orders => {
+    let orderTableRow = `
+      <tr>
+        <td class="food">${orders.name}</td>
+        <td class="price">${formatter.format(orders.price)}</td>
+        <td class="quantity">
+          <input type="number" value="1" />
+        </td>
+        <td class="delete">
+          <button onClick="deleteOrder()">
+            X
+          </button>
+        </td>
+      </tr>
+    `
+
+    document.getElementById("menu-table").innerHTML += orderTableRow
+  })
 }
