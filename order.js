@@ -2,25 +2,9 @@
 // Input Order via button
 
 const inputOrder = order => {
-  if (order === menuList[order - 1].id && order) {
     orderList.push(menuList[order - 1]) // gimana cara nambahin quantity key ke array of object
     console.log(orderList)
-  }
 
-  // for (let i = 0; i < order.length; i++) {}
-  // if (orderList.includes(orderList.id === order)) {
-  //   orderList.quantity += 1;
-  // } else if (order === menuList[order - 1].id) {
-  //   orderList.push({
-  //     id: menuList[order - 1].id,
-  //     name: menuList[order - 1].name,
-  //     price: menuList[order - 1].price,
-  //     category: menuList[order - 1].category,
-  //     image: menuList[order - 1].image,
-  //     quantity: 1
-  //   });
-  //   console.log(orderList);
-  // }
 
   document.getElementById('menu-table').innerHTML = ''
 
